@@ -1,0 +1,37 @@
+#calculator-container {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-container {
+  background-color: lightgrey;
+  height: 24px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.calculator-button {
+  display: flex;
+}
+
+.main-button {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 8px;
+  column-gap: 8px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.operator-button {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 8px;
+}
