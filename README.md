@@ -11,9 +11,9 @@ A simple web-based calculator built with **HTML**, **CSS**, and **JavaScript**. 
 ## 📁 Project Structure
 
 basic-calculator/
-├── index.html # Main HTML file
-├── styles/main.css # Stylesheet
-└── script/main  .js # JavaScript logic
+- ├── index.html # Main HTML file
+- ├── styles/main.css # Stylesheet
+- └── script/main  .js # JavaScript logic
 
 ## 🧰 Technologies Used
 
