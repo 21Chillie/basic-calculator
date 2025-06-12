@@ -6,7 +6,8 @@ A simple web-based calculator built with **HTML**, **CSS**, and **JavaScript**. 
 
 - Basic operations: Addition (`+`), Subtraction (`-`), Multiplication (`*`), Division (`/`)
 - Real-time input and result display
-- Clear button to reset the calculation
+- Clear button to fully reset the calculation and result *new
+- Saving result after calculation even the browser getting refresh *new
 
 ## 📁 Project Structure
 
