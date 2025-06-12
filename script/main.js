@@ -1,103 +1,91 @@
-let calculation = "";
+let calculation = localStorage.getItem("calculation");
+
+if (calculation === null) {
+	calculation = "";
+}
+
+document.querySelector(".math-operator").textContent = calculation;
+
+function inputCalculation(userInput) {
+	calculation += userInput;
+	document.querySelector(".math-operator").textContent = calculation;
+	console.log(calculation);
+}
+
+function doCalculation() {
+	let calculationInput = calculation;
+	calculationInput = eval(calculationInput);
+	calculation = calculationInput.toString();
+	document.querySelector(".math-operator").textContent = `= ${calculation}`;
+	console.log(calculationInput);
+
+	localStorage.setItem("calculation", calculation);
+}
 
 document.querySelector(".btn-1").addEventListener("click", () => {
-  calculation += "1";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("1");
 });
 
 document.querySelector(".btn-2").addEventListener("click", () => {
-  calculation += "2";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("2");
 });
 
 document.querySelector(".btn-3").addEventListener("click", () => {
-  calculation += "3";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("3");
 });
 
 document.querySelector(".btn-4").addEventListener("click", () => {
-  calculation += "4";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("4");
 });
 
 document.querySelector(".btn-5").addEventListener("click", () => {
-  calculation += "5";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("5");
 });
 
 document.querySelector(".btn-6").addEventListener("click", () => {
-  calculation += "6";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("6");
 });
 
 document.querySelector(".btn-7").addEventListener("click", () => {
-  calculation += "7";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("7");
 });
 
 document.querySelector(".btn-8").addEventListener("click", () => {
-  calculation += "8";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("8");
 });
 
 document.querySelector(".btn-9").addEventListener("click", () => {
-  calculation += "9";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("9");
 });
 
 document.querySelector(".btn-0").addEventListener("click", () => {
-  calculation += "0";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation("0");
 });
 
 document.querySelector(".btn-dot").addEventListener("click", () => {
-  calculation += ".";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation(".");
 });
 
 document.querySelector(".btn-add").addEventListener("click", () => {
-  calculation += " + ";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation(" + ");
 });
 
 document.querySelector(".btn-subtraction").addEventListener("click", () => {
-  calculation += " - ";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation(" - ");
 });
-
 document.querySelector(".btn-multiplication").addEventListener("click", () => {
-  calculation += " * ";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation(" * ");
 });
 
 document.querySelector(".btn-division").addEventListener("click", () => {
-  calculation += " / ";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = calculation;
+	inputCalculation(" / ");
 });
-
 document.querySelector(".btn-eval").addEventListener("click", () => {
-  calculation = eval(calculation);
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = `= ${calculation}`;
+	doCalculation();
 });
 
 document.querySelector(".btn-clear").addEventListener("click", () => {
-  calculation = "";
-  console.log(calculation);
-  document.querySelector(".math-operator").innerHTML = `${calculation}`;
+	calculation = "";
+	document.querySelector(".math-operator").textContent = `${calculation}`;
+	localStorage.removeItem("calculation");
 });
